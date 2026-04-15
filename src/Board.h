@@ -10,7 +10,7 @@ public:
 
     static constexpr int Size = 3;
 
-    Board();
+    Board() = default;
 
     void reset();
     bool isFull() const;

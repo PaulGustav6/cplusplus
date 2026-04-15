@@ -1,10 +1,5 @@
 #include "Board.h"
 
-Board::Board()
-{
-    reset();
-}
-
 void Board::reset()
 {
     m_cells.fill(Cell::Empty);
