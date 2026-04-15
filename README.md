@@ -1,12 +1,12 @@
 # TicTacToe — C++17 + SFML
 
 ## Overview
-A 3×3 TicTacToe game written in C++17. Rendering, input, and windowing use SFML 3. SFML is fetched automatically at build time via CMake FetchContent.
+A small 3×3 TicTacToe project in C++17 with SFML 3 for rendering, input and windowing.
 
 ## Tech Stack
 - **Language:** C++17
 - **Rendering / Windowing:** SFML 3.0.2
-- **Build System:** CMake + Ninja (FetchContent for SFML)
+- **Build System:** CMake (SFML via FetchContent)
 
 ## Project Structure
 ```
@@ -22,8 +22,6 @@ CMakeLists.txt          -- build configuration
 
 ## Build & Run
 ```bash
-# Replit: press Run
-# Local:
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ./build/bin/tictactoe
@@ -33,3 +31,8 @@ cmake --build build
 - Left click — place mark (X / O)
 - R — reset
 - ESC / close window — quit
+
+## Third-Party Components
+- SFML 3.0.2
+- OpenSans-Regular.ttf
+- SIL Open Font License (OFL) — see `assets/OFL.txt`
