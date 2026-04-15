@@ -1,43 +1,35 @@
 # TicTacToe — C++17 + SFML
 
-A simple 3×3 TicTacToe game written in C++17. Rendering, input, and windowing are handled by SFML. Built with CMake.
+## Overview
+A 3×3 TicTacToe game written in C++17. Rendering, input, and windowing use SFML 3. SFML is fetched automatically at build time via CMake FetchContent.
 
-## Features
+## Tech Stack
+- **Language:** C++17
+- **Rendering / Windowing:** SFML 3.0.2
+- **Build System:** CMake + Ninja (FetchContent for SFML)
 
-- Two-player local (X starts)
-- Left-click to place a mark
-- Win detection: rows, columns, and diagonals
-- Draw detection when the board is full
-- Reset and quit via keyboard
-
-## Controls
-
-| Key / Action     | Effect        |
-|------------------|---------------|
-| Left mouse click | Place mark    |
-| R                | Reset game    |
-| ESC              | Quit          |
-| Window close (×) | Quit          |
+## Project Structure
+```
+src/
+  Board.h / Board.cpp   -- 3x3 board, winner detection
+  Game.h  / Game.cpp    -- turn management, game state
+  main.cpp              -- SFML window, event loop, rendering
+assets/
+  OpenSans-Regular.ttf  -- font (SIL OFL)
+  OFL.txt               -- font licence
+CMakeLists.txt          -- build configuration
+```
 
 ## Build & Run
-
-### In Replit
-
-Press the **Run** button. Replit builds the project with CMake and starts the game automatically.
-
-### Local (Linux / macOS)
-
-Requirements: CMake ≥ 3.20, a C++17 compiler, Git.
-
 ```bash
+# Replit: press Run
+# Local:
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ./build/bin/tictactoe
 ```
 
-Assets are copied to `build/bin/assets/` automatically after the build.
-
-## Assets / Licence
-
-Font: **Open Sans Regular** by Google Fonts contributors.  
-Licence: SIL Open Font License 1.1 — see `assets/OFL.txt`.
+## Controls
+- Left click — place mark (X / O)
+- R — reset
+- ESC / close window — quit
