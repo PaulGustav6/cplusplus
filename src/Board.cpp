@@ -1,10 +1,5 @@
 #include "Board.h"
 
-Board::Board()
-{
-    reset();
-}
-
 void Board::reset()
 {
     m_cells.fill(Cell::Empty);
@@ -50,8 +45,8 @@ std::optional<Board::Cell> Board::winner() const
     // Check columns
     for (int c = 0; c < Size; ++c)
     {
-        const Cell a = get(0, c), b = get(1, c), d = get(2, c);
-        if (a != Cell::Empty && a == b && b == d)
+        const Cell a = get(0, c), b = get(1, c), c2 = get(2, c);
+        if (a != Cell::Empty && a == b && b == c2)
             return a;
     }
 

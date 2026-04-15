@@ -1,10 +1,5 @@
 #include "Game.h"
 
-Game::Game()
-{
-    reset();
-}
-
 void Game::reset()
 {
     m_board.reset();

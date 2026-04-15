@@ -33,3 +33,8 @@ cmake --build build
 - Left click — place mark (X / O)
 - R — reset
 - ESC / close window — quit
+
+## Third-Party Components
+- SFML 3.0.2
+- OpenSans-Regular.ttf
+- SIL Open Font License (OFL) — see `assets/OFL.txt`
