@@ -100,7 +100,6 @@ int main()
 
         window.clear(sf::Color(25, 25, 30));
 
-        // Status bar background
         sf::RectangleShape bar({static_cast<float>(WindowWidth), UiHeight});
         bar.setFillColor(sf::Color(40, 40, 50));
         bar.setPosition({0.f, 0.f});
@@ -109,23 +108,19 @@ int main()
         window.draw(statusText);
         window.draw(helpText);
 
-        // Grid lines
         for (int i = 1; i <= 2; ++i)
         {
-            // Vertical
             sf::RectangleShape vl({LineThickness, BoardSize});
             vl.setFillColor(sf::Color::White);
             vl.setPosition({i * CellSize - LineThickness * 0.5f, BoardTop});
             window.draw(vl);
 
-            // Horizontal
             sf::RectangleShape hl({BoardSize, LineThickness});
             hl.setFillColor(sf::Color::White);
             hl.setPosition({0.f, BoardTop + i * CellSize - LineThickness * 0.5f});
             window.draw(hl);
         }
 
-        // Draw marks
         for (int r = 0; r < 3; ++r)
         {
             for (int c = 0; c < 3; ++c)
@@ -149,7 +144,7 @@ int main()
                         window.draw(arm);
                     }
                 }
-                else // O
+                else
                 {
                     const float radius = len * 0.5f;
                     sf::CircleShape circle(radius);
