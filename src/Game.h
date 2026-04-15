@@ -8,7 +8,7 @@ public:
     enum class Player { X, O };
     enum class Result { InProgress, XWins, OWins, Draw };
 
-    Game();
+    Game() = default;
 
     void reset();
 
