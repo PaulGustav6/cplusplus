@@ -16,7 +16,6 @@ public:
     Result result() const;
     const Board& board() const;
 
-    // Returns true if the move was applied
     bool makeMove(int row, int col);
 
 private:
