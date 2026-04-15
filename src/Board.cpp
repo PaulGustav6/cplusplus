@@ -34,7 +34,6 @@ bool Board::isFull() const
 
 std::optional<Board::Cell> Board::winner() const
 {
-    // Check rows
     for (int r = 0; r < Size; ++r)
     {
         const Cell a = get(r, 0), b = get(r, 1), c = get(r, 2);
@@ -42,7 +41,6 @@ std::optional<Board::Cell> Board::winner() const
             return a;
     }
 
-    // Check columns
     for (int c = 0; c < Size; ++c)
     {
         const Cell a = get(0, c), b = get(1, c), c2 = get(2, c);
@@ -50,14 +48,12 @@ std::optional<Board::Cell> Board::winner() const
             return a;
     }
 
-    // Diagonal top-left to bottom-right
     {
         const Cell a = get(0, 0), b = get(1, 1), c = get(2, 2);
         if (a != Cell::Empty && a == b && b == c)
             return a;
     }
 
-    // Diagonal top-right to bottom-left
     {
         const Cell a = get(0, 2), b = get(1, 1), c = get(2, 0);
         if (a != Cell::Empty && a == b && b == c)

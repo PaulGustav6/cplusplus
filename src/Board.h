@@ -17,7 +17,6 @@ public:
     Cell get(int row, int col) const;
     bool trySet(int row, int col, Cell value);
 
-    // Returns X or O if a winner exists, nullopt otherwise
     std::optional<Cell> winner() const;
 
 private:

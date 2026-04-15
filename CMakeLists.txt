@@ -14,7 +14,6 @@ FetchContent_Declare(SFML
     SYSTEM
 )
 
-# Only build what we actually need
 set(SFML_BUILD_AUDIO   OFF CACHE BOOL "" FORCE)
 set(SFML_BUILD_NETWORK OFF CACHE BOOL "" FORCE)
 
@@ -36,7 +35,6 @@ endif()
 
 target_link_libraries(tictactoe PRIVATE SFML::Graphics)
 
-# Copy assets next to the binary after each build
 add_custom_command(TARGET tictactoe POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
             ${CMAKE_SOURCE_DIR}/assets
