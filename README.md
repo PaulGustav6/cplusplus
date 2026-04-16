@@ -1,38 +1,47 @@
-# TicTacToe — C++17 + SFML
+## Projektidee
 
-## Overview
-A small 3×3 TicTacToe project in C++17 with SFML 3 for rendering, input and windowing.
+Bei dem Projekt handelt es sich um eine grafische Umsetzung von TicTacToe.  
+Zwei Spieler setzen abwechselnd ihre Zeichen auf ein 3x3-Spielfeld. Nach jedem Zug wird überprüft, ob eine Gewinnbedingung erfüllt wurde oder ob das Spiel unentschieden endet.
 
-## Tech Stack
-- **Language:** C++17
-- **Rendering / Windowing:** SFML 3.0.2
-- **Build System:** CMake (SFML via FetchContent)
+Der Fokus lag dabei auf einer sauberen, überschaubaren Struktur und einer vollständigen Umsetzung.
 
-## Project Structure
-```
-src/
-  Board.h / Board.cpp   -- 3x3 board, winner detection
-  Game.h  / Game.cpp    -- turn management, game state
-  main.cpp              -- SFML window, event loop, rendering
-assets/
-  OpenSans-Regular.ttf  -- font (SIL OFL)
-  OFL.txt               -- font licence
-CMakeLists.txt          -- build configuration
-```
+## Verwendete Technologien
 
-## Build & Run
-```bash
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build
-./build/bin/tictactoe
-```
-
-## Controls
-- Left click — place mark (X / O)
-- R — reset
-- ESC / close window — quit
-
-## Third-Party Components
+- C++17
 - SFML 3.0.2
-- OpenSans-Regular.ttf
-- SIL Open Font License (OFL) — see `assets/OFL.txt`
+- CMake
+
+## Funktionen
+
+- grafische Darstellung eines 3x3-Spielfelds
+- zwei Spieler spielen abwechselnd X und O
+- Erkennung von Sieg und Unentschieden
+- Anzeige des aktuellen Spielstands bzw. Gewinners
+- Zurücksetzen des Spiels per Tastendruck
+- 
+## Projektaufbau
+
+Das Projekt ist in mehrere Dateien aufgeteilt:
+
+- **main.cpp**  
+  Enthält den Programmeinstieg, das Erstellen des Fensters, die Event-Verarbeitung und die grafische Darstellung.
+
+- **Board.h/Board.cpp**  
+  Enthält die Spielfeldlogik, also das Setzen von Feldern, die Prüfung auf freie Felder und die Ermittlung eines Gewinners.
+
+- **Game.h/Game.cpp**  
+  Verwaltet den aktuellen Spielzustand, den Spielerwechsel und das Zurücksetzen des Spiels.
+
+## Steuerung
+
+- **Linksklick**: Feld auswählen und Spielzug setzen
+- **R**: Spiel zurücksetzen
+- **ESC** oder Fenster schließen: Programm beenden
+
+## Kompilieren und Ausführen
+
+### Voraussetzungen
+
+- ein C++-Compiler mit C++17-Unterstützung
+- CMake
+- Internetverbindung beim ersten Build, da SFML über `FetchContent` geladen wird
