@@ -2,10 +2,7 @@
 
 Bei dem Projekt handelt es sich um eine grafische Umsetzung von TicTacToe.  
 Zwei Spieler setzen abwechselnd ihre Zeichen auf ein 3x3-Spielfeld. Nach jedem Zug wird überprüft, ob eine Gewinnbedingung erfüllt wurde oder ob das Spiel unentschieden endet.
-
-> Die Trennung in `Board`, `Game` und Fenstercode ist bewusst simpel: logisch sauber getrennt, aber ohne Overengineering für so ein kleines Projekt.
-
-Der Fokus lag dabei auf einer sauberen, überschaubaren Struktur und einer vollständigen Umsetzung.
+Der Fokus lag dabei auf einer sauberen Struktur und einer vollständigen Umsetzung.
 
 ## Verwendete Technologien
 
