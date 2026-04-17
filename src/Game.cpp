@@ -39,6 +39,8 @@ void Game::switchPlayer()
 
 void Game::updateResult()
 {
+    // Sieg zuerst, damit ein letzter Zug auf vollem Brett nicht fälschlich als Remis endet.
+    // So spare ich mir hier einen extra Spezialfall.
     if (const auto w = m_board.winner())
     {
         m_result = (*w == Board::Cell::X) ? Result::XWins : Result::OWins;

@@ -3,6 +3,8 @@
 #include <array>
 #include <optional>
 
+// Ich halte Board absichtlich nur für Zustand + einfache Regeln.
+// Sonst wächst die Klasse zu schnell und wird im kleinen Projekt unnötig schwer.
 class Board
 {
 public:

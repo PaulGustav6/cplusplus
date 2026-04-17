@@ -2,6 +2,8 @@
 
 #include "Board.h"
 
+// Game nimmt den Spielablauf auf, damit main.cpp nicht zum Mischmasch aus allem wird.
+// Für ein 3x3-Spiel reicht diese eine Trennung komplett aus.
 class Game
 {
 public:

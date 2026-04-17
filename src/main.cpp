@@ -10,6 +10,8 @@ namespace
     constexpr unsigned int WindowWidth  = 600;
     constexpr unsigned int WindowHeight = 700;
 
+    // Die Werte sind fix, damit Raster, UI-Text und Klicks ohne Nebeneffekte zusammenpassen.
+    // Für den Projektumfang ist das robuster als halbherzige Skalierung.
     constexpr float UiHeight  = 80.f;
     constexpr float BoardTop  = UiHeight;
     constexpr float BoardSize = 600.f;
@@ -54,6 +56,8 @@ int main()
     sf::RenderWindow window(sf::VideoMode({WindowWidth, WindowHeight}), "TicTacToe");
     window.setFramerateLimit(60);
 
+    // Ich lade lokal aus dem Projekt, damit es auf einem frischen Setup direkt startet.
+    // Für den Stand ist das entspannter als erst Pfade oder Config zu bauen.
     sf::Font font;
     if (!font.openFromFile("assets/OpenSans-Regular.ttf"))
         return 1;
@@ -72,6 +76,8 @@ int main()
     {
         while (const std::optional event = window.pollEvent())
         {
+            // Alle Inputs bleiben hier gebündelt, damit der Ablauf beim Lesen nicht springt.
+            // In der kleinen SFML-App ist das deutlich wartbarer als verstreute Handler.
             if (event->is<sf::Event::Closed>())
                 window.close();
 
@@ -89,6 +95,8 @@ int main()
                 {
                     const sf::Vector2f p{static_cast<float>(mb->position.x),
                                          static_cast<float>(mb->position.y)};
+                    // Erst auf das Spielfeld zurückrechnen, damit UI-Rand und Feldlogik getrennt bleiben.
+                    // Sonst koppeln Klicks zu stark an das restliche Layout.
                     int row = -1, col = -1;
                     if (cellFromPoint(p, row, col))
                         game.makeMove(row, col);
